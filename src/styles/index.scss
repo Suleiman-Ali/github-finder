@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap');
+
+$dark-1: #393b49;
+$dark-2: #323848;
+$dark-3: #262932;
+$dark-4: #262932;
+$white: #fff;
+
+$bp: 600px;
+
+html {
+  font-size: 62.5%;
+  font-family: 'Fredoka', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+i {
+  font-style: normal;
+}
+
+.active {
+  opacity: 1 !important;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  width: 100%;
+  background-color: $dark-3;
+  padding: 2rem 2.5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .i {
+    text-decoration: none;
+  }
+
+  .logo {
+    color: $white;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    &__icon {
+      font-size: 2.5rem;
+
+      @media screen and (min-width: $bp) {
+        font-size: 3rem;
+      }
+    }
+
+    &__text {
+      font-size: 1.75rem;
+      font-weight: 500;
+
+      @media screen and (min-width: $bp) {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .pages {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    &__text {
+      text-decoration: none;
+      opacity: 0.8;
+      font-size: 1.75rem;
+      color: $white;
+      transition: all 0.1s;
+
+      @media screen and (min-width: $bp) {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+.home {
+  flex: 1;
+  background-color: $dark-1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .search {
+    width: 90%;
+    overflow: hidden;
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+      rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+
+    @media screen and (min-width: $bp) {
+      width: 100%;
+      max-width: 650px;
+    }
+
+    &__input {
+      flex: 1;
+      width: 100%;
+      border: none;
+      outline: none;
+      font-family: inherit;
+      font-size: 1.75rem;
+      padding: 1.5rem;
+
+      @media screen and (min-width: $bp) {
+        font-size: 2rem;
+      }
+    }
+
+    &__button {
+      border: none;
+      outline: none;
+      font-size: 1.75rem;
+      padding: 1.5rem 3rem;
+      background-color: $dark-4;
+      color: $white;
+      opacity: 0.9;
+      transition: all 0.1s;
+      cursor: pointer;
+
+      @media screen and (min-width: $bp) {
+        font-size: 2rem;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  &__icon {
+    color: $white;
+    font-size: 2rem;
+  }
+
+  &__text {
+    color: $white;
+    font-size: 2rem;
+  }
+}
