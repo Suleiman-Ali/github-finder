@@ -12,6 +12,13 @@ function App(): JSX.Element {
           <input type="text" className="search__input" placeholder="Search" />
           <button className="search__button">Search</button>
         </div>
+
+        <footer className="footer">
+          <i className="fa-solid fa-bookmark footer__icon"></i>
+          <p className="footer__text">
+            Copyright &copy; {now} All Rights Reversed
+          </p>
+        </footer>
       </div>
     </div>
   );
