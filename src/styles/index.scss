@@ -7,6 +7,8 @@ $dark-4: #262932;
 $white: #fff;
 
 $bp: 600px;
+$bp-2: 800px;
+$bp-3: 1400px;
 
 html {
   font-size: 62.5%;
@@ -92,16 +94,17 @@ i {
 }
 
 .home {
-  height: 100%;
+  flex: 1;
   background-color: $dark-1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  padding: 4rem 0;
+  gap: 5rem;
 }
 
 .search {
-  flex: 1;
   width: 90%;
   overflow: hidden;
 
@@ -110,8 +113,7 @@ i {
   align-items: center;
 
   @media screen and (min-width: $bp) {
-    width: 100%;
-    max-width: 650px;
+    max-width: 750px;
   }
 
   &__input {
@@ -136,7 +138,7 @@ i {
     border: none;
     outline: none;
     font-size: 1.75rem;
-    padding: 1.5rem 3rem;
+    padding: 1.5rem 2rem;
     background-color: $dark-4;
     color: $white;
     opacity: 0.9;
@@ -150,6 +152,33 @@ i {
 
     @media screen and (min-width: $bp) {
       font-size: 2rem;
+      padding: 1.5rem 3rem;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__clear {
+    border: none;
+    outline: none;
+    font-size: 1.75rem;
+    padding: 1.5rem 2rem;
+    background-color: rgba(#555a61, 1);
+    color: $white;
+    opacity: 0.9;
+    transition: all 0.1s;
+    cursor: pointer;
+    border-radius: 3px;
+
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 6px 24px 0px,
+      rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    margin-left: 1rem;
+
+    @media screen and (min-width: $bp) {
+      font-size: 2rem;
+      padding: 1.5rem 3rem;
 
       &:hover {
         opacity: 1;
@@ -182,5 +211,131 @@ i {
     @media screen and (min-width: $bp) {
       font-size: 1.75rem;
     }
+  }
+}
+
+.users {
+  width: 90%;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2.5rem;
+
+  @media screen and (min-width: $bp-2) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (min-width: $bp-3) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.user {
+  cursor: pointer;
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 3px;
+
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+
+  background-color: rgba($dark-4, 0.75);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+
+  @media screen and (min-width: $bp-2) {
+    transition: all 0.1s;
+    &:hover {
+      transform: scale(1.05);
+      background-color: rgba($dark-4, 0.85);
+    }
+
+    &:active {
+      transform: scale(1);
+    }
+  }
+
+  &__avatarBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__avatar {
+    height: 7.5rem;
+    border-radius: 100%;
+  }
+  &__textBox {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  &__heading {
+    color: $white;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+  }
+  &__message {
+    font-size: 1.4rem;
+    color: rgba($white, 0.75);
+  }
+}
+
+.error {
+  font-size: 1.75rem;
+  color: $white;
+  letter-spacing: 0.1rem;
+  font-weight: 450;
+  animation: text 1s ease forwards;
+
+  @media screen and (min-width: $bp) {
+    font-size: 2.5rem;
+    letter-spacing: 0.25rem;
+  }
+}
+
+@keyframes text {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.lds-hourglass {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-hourglass:after {
+  content: ' ';
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 8px;
+  box-sizing: border-box;
+  border: 32px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-hourglass 1.2s infinite;
+}
+@keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
   }
 }
