@@ -1,7 +1,7 @@
 interface ButtonProps {
   text: string;
   cls: string;
-  onClick: () => void;
+  onClick?: () => void;
 }
 function Button({ text, cls, onClick }: ButtonProps): JSX.Element {
   return (
