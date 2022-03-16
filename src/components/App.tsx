@@ -1,9 +1,10 @@
 import Footer from './Footer';
 import Home from './Home';
 import Navbar from './Navbar';
+import Notfound from './Notfound';
 import { ContextProvider } from '../context';
 import { Routes, Route } from 'react-router-dom';
-import Notfound from './Notfound';
+import UserProfile from './UserProfile';
 
 function App(): JSX.Element {
   return (
@@ -13,6 +14,7 @@ function App(): JSX.Element {
 
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/users/:login" element={<UserProfile />} />
           <Route path="/notfound" element={<Notfound />} />
           <Route path="*" element={<Notfound />} />
         </Routes>
@@ -25,8 +27,5 @@ function App(): JSX.Element {
 
 export default App;
 
-// TODO Context
-// TODO ROUTING
-// TODO USER PAGE
-// TODO NotFound Page
 // TODO REFACTOR
+// TODO TEST
