@@ -1,11 +1,12 @@
 interface ButtonProps {
   text: string;
   cls: string;
+  type?: 'submit' | 'button';
   onClick?: () => void;
 }
-function Button({ text, cls, onClick }: ButtonProps): JSX.Element {
+function Button({ text, cls, onClick, type }: ButtonProps): JSX.Element {
   return (
-    <button className={cls} onClick={onClick}>
+    <button className={cls} onClick={onClick} type={type}>
       {text}
     </button>
   );

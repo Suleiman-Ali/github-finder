@@ -1,0 +1,47 @@
+.accountDetails {
+  display: flex;
+  flex-direction: column;
+  width: $width-90;
+  gap: 1rem;
+
+  @media screen and (min-width: $bp-4) {
+    flex-direction: row;
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+    width: $width-100;
+    border-radius: $border-radius;
+    background-color: rgba($dark-4, 0.75);
+    box-shadow: $box-shadow;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 2.5rem;
+  }
+
+  &__textBox {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__text {
+    font-size: $font-size-15;
+    font-weight: $font-boldness;
+    letter-spacing: $letter-spacing;
+    color: rgba($white, 0.75);
+  }
+
+  &__number {
+    font-size: $font-size-20;
+    font-weight: $font-boldness;
+    letter-spacing: $letter-spacing;
+    color: $white;
+  }
+
+  &__icon {
+    color: $white;
+    font-size: 3.5rem;
+  }
+}

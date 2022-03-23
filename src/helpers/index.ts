@@ -31,9 +31,5 @@ export type Repo = {
 };
 export type Repos = Repo[];
 
-const colors = ['#70a24c', '#437aa1', '#e26970', '#d8ca84'];
-let index = 0;
-export const color = () => {
-  if (index === 4) index = 0;
-  return colors[index++];
-};
+let colors = ['#d8ca84', '#e26970', '#437aa1', '#70a24c'];
+export const color = () => colors[Math.floor(Math.random() * colors.length)];

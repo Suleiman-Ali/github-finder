@@ -1,0 +1,38 @@
+.notfound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $dark-1;
+  flex: 1;
+  gap: 1rem;
+
+  &__heading {
+    color: $white;
+    font-size: 7.5rem;
+
+    @media screen and (min-width: $bp) {
+      font-size: 12.5rem;
+    }
+  }
+
+  &__message {
+    font-size: $font-size-20;
+    color: $white;
+
+    @media screen and (min-width: $bp) {
+      font-size: 3rem;
+    }
+  }
+
+  &__button {
+    font-size: $font-size-17-5;
+    background-color: $dark-4;
+    color: $white;
+    transition: $transition;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    margin-top: 2.5rem;
+    @include button-common();
+  }
+}

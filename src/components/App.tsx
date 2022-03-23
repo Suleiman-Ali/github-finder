@@ -2,9 +2,9 @@ import Footer from './Footer';
 import Home from './Home';
 import Navbar from './Navbar';
 import Notfound from './Notfound';
-import { ContextProvider } from '../context';
-import { Routes, Route } from 'react-router-dom';
 import UserProfile from './UserProfile';
+import { Routes, Route } from 'react-router-dom';
+import { ContextProvider } from '../context';
 
 function App(): JSX.Element {
   return (
@@ -26,6 +26,3 @@ function App(): JSX.Element {
 }
 
 export default App;
-
-// TODO REFACTOR
-// TODO TEST

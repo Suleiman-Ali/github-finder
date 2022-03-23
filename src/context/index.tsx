@@ -1,5 +1,5 @@
 import github from '../apis/index';
-import React, { ReactNode } from 'react';
+import React, { FormEvent, ReactNode } from 'react';
 import { useRef, useState } from 'react';
 import { buildQuery, year, Users, User, Voidy, Repos } from '../helpers';
 
@@ -17,7 +17,7 @@ interface ContextTypes {
   userLoading: boolean;
   searchInput: React.RefObject<HTMLInputElement>;
   clearHandler: Voidy;
-  submitHandler: Voidy;
+  submitHandler: (e: FormEvent) => Promise<void>;
   getUser: (login: string) => void;
 }
 const Context = React.createContext<ContextTypes>(undefined!);
@@ -34,13 +34,10 @@ export function ContextProvider({ children }: ContextProps): JSX.Element {
 
   const getUser = async (login: string) => {
     setUserLoading(true);
-
     const { data: user } = await github.get(`/users/${login}`);
     const { data: repos } = await github.get(`/users/${login}/repos`);
-
     setUser(user);
     setUserRepos(repos);
-
     setUserLoading(false);
   };
 
@@ -50,7 +47,9 @@ export function ContextProvider({ children }: ContextProps): JSX.Element {
       searchInput.current.value = '';
   };
 
-  const submitHandler = async () => {
+  const submitHandler = async (e: FormEvent) => {
+    e.preventDefault();
+
     if (!searchInput.current || !searchInput.current.value) {
       setUsers([]);
       setError('Cannot search for empty text ): ');

@@ -1,9 +1,6 @@
-import Context from '../context';
-import { useContext } from 'react';
+import { year } from '../helpers';
 
 function Footer(): JSX.Element {
-  const { year } = useContext(Context);
-
   return (
     <footer className="footer">
       <i className="fa-solid fa-bookmark footer__icon"></i>

@@ -1,0 +1,54 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: $width-100;
+  background-color: $dark-3;
+  padding: 2rem 2.5rem;
+
+  .i {
+    text-decoration: none;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: $white;
+
+    &__icon {
+      font-size: 2.5rem;
+
+      @media screen and (min-width: $bp) {
+        font-size: 3rem;
+      }
+    }
+
+    &__text {
+      font-size: $font-size-17-5;
+      font-weight: $font-boldness;
+
+      @media screen and (min-width: $bp) {
+        font-size: $font-size-20;
+      }
+    }
+  }
+
+  .pages {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    &__text {
+      font-size: $font-size-17-5;
+      color: $white;
+      transition: $transition;
+      opacity: 0.8;
+      text-decoration: none;
+
+      @media screen and (min-width: $bp) {
+        font-size: $font-size-20;
+      }
+    }
+  }
+}

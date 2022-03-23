@@ -1,0 +1,65 @@
+.users {
+  width: $width-90;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2.5rem;
+
+  @media screen and (min-width: $bp-2) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (min-width: $bp-3) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  background-color: rgba($dark-4, 0.75);
+  width: $width-100;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  padding: 1.5rem;
+  gap: 2.5rem;
+
+  @media screen and (min-width: $bp-2) {
+    transition: $transition;
+
+    &:hover {
+      transform: scale(1.05);
+      background-color: rgba($dark-4, 0.85);
+    }
+
+    &:active {
+      transform: scale(1);
+    }
+  }
+
+  &__avatarBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__avatar {
+    height: 7.5rem;
+    border-radius: 100%;
+  }
+  &__textBox {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  &__heading {
+    color: $white;
+    font-size: $font-size-20;
+    font-weight: $font-boldness;
+    letter-spacing: $letter-spacing;
+  }
+  &__message {
+    font-size: 1.4rem;
+    color: rgba($white, 0.75);
+  }
+}

@@ -1,0 +1,24 @@
+.error {
+  font-size: $font-size-17-5;
+  color: $white;
+  letter-spacing: $letter-spacing;
+  font-weight: $font-boldness;
+  animation: text 1s ease forwards;
+
+  @media screen and (min-width: $bp) {
+    font-size: 2.5rem;
+    letter-spacing: 0.25rem;
+  }
+}
+
+@keyframes text {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

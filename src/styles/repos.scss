@@ -1,0 +1,109 @@
+.repos {
+  display: flex;
+  flex-direction: column;
+  width: $width-90;
+  gap: 2.5rem;
+}
+
+.repo {
+  display: flex;
+  flex-direction: column;
+  width: $width-100;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  background-color: rgba($dark-4, 0.75);
+  overflow: hidden;
+  position: relative;
+  gap: 2rem;
+  padding: 3rem;
+
+  &__skewedBadge {
+    font-weight: $font-boldness;
+    letter-spacing: $letter-spacing;
+    color: $white;
+    position: absolute;
+    top: 1rem;
+    right: -2rem;
+    font-size: 1.25rem;
+    padding: 0.075rem 3rem;
+    transform: rotate(30deg);
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    @media screen and (max-width: $bp) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__icon {
+    font-size: $font-size-17-5;
+    color: $white;
+
+    @media screen and (min-width: $bp) {
+      font-size: $font-size-20;
+    }
+  }
+
+  &__name {
+    font-size: $font-size-17-5;
+    font-weight: $font-boldness;
+    letter-spacing: $letter-spacing;
+    color: $white;
+
+    @media screen and (min-width: $bp) {
+      font-size: $font-size-20;
+    }
+  }
+
+  &__description {
+    font-size: $font-size-15;
+    font-weight: $font-boldness;
+    letter-spacing: $letter-spacing;
+    color: rgba($white, 0.75);
+
+    @media screen and (min-width: $bp) {
+      font-size: $font-size-17-5;
+    }
+  }
+
+  &__badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: $font-size-15;
+    font-weight: $font-boldness;
+    letter-spacing: $letter-spacing;
+    gap: 0.5rem;
+    border-radius: 15px;
+    padding: 0.5rem 1.5rem;
+
+    @media screen and (max-width: $bp) {
+      width: 100%;
+    }
+
+    &:nth-child(1) {
+      color: $gr;
+      background-color: rgba($gr, 0.25);
+    }
+
+    &:nth-child(2) {
+      color: $bl;
+      background-color: rgba($bl, 0.25);
+    }
+
+    &:nth-child(3) {
+      color: $rd;
+      background-color: rgba($rd, 0.25);
+    }
+
+    &:nth-child(4) {
+      color: $ya;
+      background-color: rgba($ya, 0.25);
+    }
+  }
+}

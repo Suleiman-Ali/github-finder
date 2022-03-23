@@ -7,18 +7,23 @@ function Search(): JSX.Element {
     useContext(Context);
 
   return (
-    <div className="search">
+    <form className="search" onSubmit={submitHandler}>
       <input
         type="text"
         className="search__input"
         placeholder="Search"
         ref={searchInput}
       />
-      <Button text="Search" cls="search__button" onClick={submitHandler} />
+      <Button text="Search" cls="search__button" type="submit" />
       {users.length > 0 ? (
-        <Button text="CL" cls="search__clear" onClick={clearHandler} />
+        <Button
+          text="CL"
+          cls="search__clear"
+          onClick={clearHandler}
+          type="button"
+        />
       ) : null}
-    </div>
+    </form>
   );
 }
 
