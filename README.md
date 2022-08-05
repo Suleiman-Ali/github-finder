@@ -7,10 +7,8 @@ Github Finder is an app where you can search for github users and view their pro
 
 
 ### Built Using
-- HTML with JSX
-- CSS with SCSS
-- JavaScript with Typescript 
+- HTML
+- SASS
+- Typescript 
 - ReactJs
-- Axios
-- Font Awesome
 - Github API
