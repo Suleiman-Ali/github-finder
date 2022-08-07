@@ -1,7 +1,7 @@
-import { useContext } from 'react';
-import { Link } from 'react-router-dom';
 import Context from '../context';
 import User from './User';
+import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 
 function Users(): JSX.Element {
   const { users } = useContext(Context);

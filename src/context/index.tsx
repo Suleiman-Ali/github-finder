@@ -1,6 +1,5 @@
 import github from '../apis/index';
-import React, { FormEvent, ReactNode } from 'react';
-import { useRef, useState } from 'react';
+import { createContext, FormEvent, ReactNode, useRef, useState } from 'react';
 import { buildQuery, year, Users, User, Voidy, Repos } from '../helpers';
 
 interface ContextProps {
@@ -20,7 +19,7 @@ interface ContextTypes {
   submitHandler: (e: FormEvent) => Promise<void>;
   getUser: (login: string) => void;
 }
-const Context = React.createContext<ContextTypes>(undefined!);
+const Context = createContext<ContextTypes>(undefined!);
 
 export function ContextProvider({ children }: ContextProps): JSX.Element {
   // prettier-ignore
