@@ -33,10 +33,12 @@ export function ContextProvider({ children }: ContextProps): JSX.Element {
 
   const getUser = async (login: string) => {
     setUserLoading(true);
-    const { data: user } = await github.get(`/users/${login}`);
-    const { data: repos } = await github.get(`/users/${login}/repos`);
-    setUser(user);
-    setUserRepos(repos);
+    const allData = await Promise.all([
+      github.get(`/users/${login}`),
+      github.get(`/users/${login}/repos`),
+    ]);
+    setUser(allData[0].data);
+    setUserRepos(allData[1].data);
     setUserLoading(false);
   };
 
